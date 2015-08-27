@@ -132,6 +132,30 @@ label, small{
   color: #000;
 }
 
+.navGhost{
+	font-family: 'open_sansregular';
+	text-transform: uppercase;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 12px;
+	
+	display: inline-block;
+	width: 5rem;
+	padding: 4px;
+	color: #fff;
+	border: 1px solid #fff;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+	background: none;
+}
+
+.navGhost:hover,
+.navGhost:active {
+  background-color: #fff;
+  color: #000;
+}
+
 /* INFO */
 #info{
 	position: relative;
@@ -221,17 +245,17 @@ label, small{
 }
 
 /* RECYCLING */
-#recylcing{
+#recycling{
 	position: relative;
 }
 
-#recylcing .ghost{
+#recycling .ghost{
 	color: #000;
 	border: 1px solid #000;
 }
 
-#recylcing .ghost:hover,
-#recylcing .ghost:active {
+#recycling .ghost:hover,
+#recycling .ghost:active {
   background-color: #000;
   color: #fff;
 }
@@ -272,6 +296,17 @@ label, small{
 	top: -11px;
 }
 
+#contact .ghost{
+	color: #000;
+	border: 1px solid #000;
+}
+
+#contact .ghost:hover,
+#contact .ghost:active {
+  background-color: #000;
+  color: #fff;
+}
+
 /* FOOTER */
 footer{
 	height: 2rem;
@@ -281,6 +316,25 @@ footer p{
 	color: #f8f7f7;
 	padding: 0;
 	margin: 0.5em 0 0 0;
+}
+
+/* PRODUCTS */
+#products{
+	position: relative;
+	background-color: #fff;
+	padding: 50px 0;
+}
+
+#products table{
+	border: none;
+}
+#products table .productPic{
+	position: relative; 
+	width: 80px; /* for IE 6 */
+	height: 80px;
+	overflow: hidden;
+	background-size: cover;
+    background-position: center; 
 }
 
 /* HACKS */
@@ -359,4 +413,20 @@ li .infoProd{
 }
 #drop li a:hover{
     background-color: #f8f7f7;
+}
+
+.sub-nav{
+    margin: 0 auto !important;
+    width: -webkit-fit-content;
+       width: -moz-fit-content;
+            width: fit-content;
+    }
+.sub-nav a{
+	padding: 0!important;
+}
+.magellan-nav {
+  right: 0;
+}
+.sub-nav dt.active a, .sub-nav dd.active a, .sub-nav li.active a{
+background-color: #000;
 }

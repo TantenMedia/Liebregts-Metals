@@ -1,0 +1,175 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if IE]><link rel="shortcut icon" href="img/lm32.ico"><![endif]-->
+
+<!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
+<link rel="icon" href="img/lm192.ico">
+
+<title>Liebregts Metals Trading & Recylcing</title>
+<link rel="stylesheet" href="css/foundation.css" />
+<link rel="stylesheet" href="css/screen.css" />
+<script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+<header id="header" class="divider-inside-bottom">
+  <div class="row">
+    <div class="large-8 medium-8 small-10 small-centered columns logo">
+      <header> <img src="img/LiebregtsLogo.png" alt="Liebregts Metals trading and recycling" /> </header>
+    </div>
+  </div>
+</header>
+
+<section id="info">
+    <div class="row">
+        <div class="large-8 medium-8 small-10 small-centered columns">
+            <article class="text100 text-center">
+                <header>
+                    <h2>Scrap</h2>
+                    <p>Er zijn 350 producten gevonden.</p>
+                    <a href="#contact" class="button ghost">Download lijst</a>
+                </header>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="products">
+  <div class="arrow_minfo"> <img src="img/arrow_info.png" alt="Contact Dropdown"> </div>
+
+    <!-- main content goes here -->
+ <div class="row">
+    <div class="large-8 medium-8 small-10 small-centered columns">
+        <table>
+        <thead>
+            <tr>
+                <th width="100">Naam</th>
+                <th width="100">Type</th>
+                <th width="100">Afmeting</th>
+                <th width="100">Aantal stuks</th>
+                <th width="100">Prijs per Stuk</th>
+                <th width="80">Afbeelding</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr>
+                  <td>2de keus</td>
+                  <td>Buis</td>
+                  <td>44x44mm</td>
+                  <td>45st</td>
+                  <td>45,-</td>
+                  <td><a class="th" href="img/products/DX51DZ.jpg"><img src="img/products/DX51DZ.jpg"></a></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><a class="th" href="img/products/dx51dz1.jpg"><img src="img/products/dx51dz1.jpg"></a></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><a class="th" href="img/no_image.png"><img src="img/products/no_image.png"></a></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><a class="th" href="img/cat_scrap.jpg"><img src="img/cat_scrap.jpg"></a></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td class=" text-center" colspan="6"><a href="#">Alle producten</a> | <a href="#">Volgende 10 producten ></a></td>
+                </tr>
+            </tbody>
+        </table>  
+    </div>
+  </div>
+
+</section>
+
+<section id="partner" style="background-image: url('img/partner_bg.png');">
+
+  <div class="row">
+    <div class="large-8 medium-8 small-10 small-centered columns">
+            <article class="text100 text-center">
+                <h3>Liebregts Metals Trading & Recycling werkt met een aantal sterke partners in Nederland, Duitsland en Spanje.</h3>
+			<a href="#" class="button ghost">Word ook partner</a>
+            </article>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+	<div class="row">
+        <div class="large-8 medium-8 small-10 small-centered columns">
+			<p>© 2015 Liebregts Metals <small>Trading and Recycling</small></p>
+        </div>
+    </div>
+</footer>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+      $(document).foundation();
+	  
+/*	  $(window).scroll(function() {
+			if ($(this).scrollTop() > 1){  
+				$('header').addClass("sticky");
+			}
+			else{
+				$('header').removeClass("sticky");
+			}
+		});*/
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+$(function(){
+        $('#contactForm').submit(function(e){
+
+            // Stop the form actually posting
+            e.preventDefault();
+			
+			var formData = {
+				user_firstname: $("[name='firstname']").val(),
+                user_surname: $("[name='surname']").val(),
+                user_email: $("[name='email']").val(),
+                user_company: $("[name='company']").val(),
+                user_phone: $("[name='phone']").val(),
+                user_message: $("[name='message']").val()
+				}; //Array 
+ 
+			$.ajax({
+				url : "php/contact-form.php",
+				type: "POST",
+				data : formData,
+				success: function(data, textStatus, jqXHR)
+				{
+					$("#contactForm :input").attr("disabled", true);
+					$("#submit_btn").html('Sended');
+					console.log(textStatus);
+					console.log(jqXHR);
+				},
+				error: function (jqXHR, textStatus, errorThrown)
+				{
+					console.log(errorThrown);
+				}
+			});
+
+        });
+    });
+});
+</script>
+</body>
+</html>
