@@ -342,6 +342,18 @@ footer p{
     width:100%;
 }
 
+/* ORDER */
+#order .ghost{
+	color: #000;
+	border: 1px solid #000;
+}
+
+#order .ghost:hover,
+#order .ghost:active {
+  background-color: #000;
+  color: #fff;
+}
+
 /* HACKS */
 
 .fullWidth {
